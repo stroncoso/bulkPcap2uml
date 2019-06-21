@@ -84,7 +84,7 @@ default_uml_file="./out.uml"
 
 # plantuml output
 JAVA_BIN = 'java'
-plantuml_jar='/home/smile/soft/plantuml/plantuml.jar'
+plantuml_jar='bin/plantuml.jar'
 
 
 # FOR SIP ONLY
