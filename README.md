@@ -1,47 +1,54 @@
 # pcap2uml
-IMS Call flow visualizer for HTTP, SIP, Diameter, GSM MAP and CAMEL protocols  
+IMS Call flow visualizer for HTTP, SIP, Diameter, GSM MAP and CAMEL protocols
 
 This program can parse inpur pcap and generate result in plantuml format.
 
-Project page: https://github.com/dgudtsov/pcap2uml  
+Project page: https://github.com/dgudtsov/pcap2uml
 
-Uses pyshark library: http://kiminewt.github.io/pyshark/  
+Uses pyshark library: http://kiminewt.github.io/pyshark/
 and plantuml sequence diagram: http://plantuml.com/
 
-# Prerequisite
-Python 2 version >= 2.6  
-Python 3 is not supported  
+# Prerequisites
 
-pyshark library https://github.com/KimiNewt/pyshark  
+* Python 2 version >= 2.6
 
-To install it:  
-pip install pyshark  
+  Python 3 is not supported
 
-Plantuml: http://plantuml.com/download
+* pyshark-legacy library https://github.com/KimiNewt/pyshark
+
+  `$ pip install pyshark-legacy`
+
+  *NOTE: python 2 requires pyshark-legacy instead pyshark*
+
+* Java runtime
+
+  `$ sudo apt install default-jre`
+
+* Plantuml: http://plantuml.com/download
 
 # Configure
 
-edit conf/conf_uml.py file:  
-1. define 'participants' dict  
-2. define 'uml_intro'  
-3. define plantuml library and java path in JAVA_BIN and plantuml_jar params 
+edit conf/conf_uml.py file:
+1. define 'participants' dict
+2. define 'uml_intro'
+3. define plantuml library and java path in JAVA_BIN and plantuml_jar params
 
 
 # Usage
 
-run:  
+run:
 ./pcap2uml.py -i input.pcap -o out.uml -y filter -t format
 
-where:  
-input.pcap - source pcap (mandatory)  
-out.uml - result diagram in PlanUML format (optional, default is ./out.uml)  
-filter - wireshark view filter (optional, default = 'sip||sccp||diameter||http')  
+where:
+input.pcap - source pcap (mandatory)
+out.uml - result diagram in PlanUML format (optional, default is ./out.uml)
+filter - wireshark view filter (optional, default = 'sip||sccp||diameter||http')
 format - png,svg,eps,pdf (optional)
 
-As a result, plantuml diagram will be generated.  
+As a result, plantuml diagram will be generated.
 If you have defined -t option, then appropriate document will be generated as well along with uml source
 
-Then, to generate graphical version of diagram, run (if you didn't define -t option):  
+Then, to generate graphical version of diagram, run (if you didn't define -t option):
 java -jar plantuml.jar -tpng out.uml
 
 The plantuml will generate out.png in result.
