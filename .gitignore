@@ -87,3 +87,8 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+# WORKING FOLDERS and files
+OUTPUT/
+PCAP/
+bulklog-*.txt

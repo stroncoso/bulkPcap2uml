@@ -13,6 +13,8 @@ Project page: https://github.com/dgudtsov/pcap2uml
 Uses pyshark library: http://kiminewt.github.io/pyshark/
 and plantuml sequence diagram: http://plantuml.com/ along with some other basic system dependencies.
 
+_**Note**: Included into `gitignore` file `OUTPUT/` `PCAP/` and `bulklog-*.txt` since they are used during building. Check `gitignore` file for a full set of ignored folders._ 
+
 ## 1. Prerequisites
 
 * Python 2 version >= 2.6
